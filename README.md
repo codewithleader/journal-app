@@ -7,3 +7,4 @@
 ### Sass
 - Styles.
  - journal.scss
+ - Component when nothing is selected.
