@@ -18,7 +18,7 @@
  - auth action login and logout.
 
 ### Firebase
-- Firebase inicial setup.
+- Firebase initial setup.
  - Create a new proyect in the Firebase Console.
  - The registration options by email and Google were enabled.
  - Installed Firebase v8.10.0 using npm command.
