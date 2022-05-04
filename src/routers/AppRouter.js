@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { JournalScreen } from '../components/auth/journal/JournalScreen';
+import { JournalScreen } from '../components/journal/JournalScreen';
 import { AuthRouter } from './AuthRouter';
 
 export const AppRouter = () => {

@@ -43,4 +43,4 @@ export const RegisterScreen = () => {
 			</form>
 		</>
 	);
-};
+}
