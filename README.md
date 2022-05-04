@@ -16,6 +16,7 @@
 - First dispatch of an action to our Store.
  - Use our useForm.js
  - auth action login and logout.
+- Thunk Middleware for Asynchronous actions
 
 ### Firebase
 - Firebase initial setup.

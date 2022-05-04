@@ -12,3 +12,12 @@ export const login = (uid, displayName) => ({
 		displayName,
 	},
 });
+
+// action async example:
+export const startLoginEmailPassword = (email, password) => {
+ return (dispatch) => {
+  setTimeout(() => {
+   dispatch(login(123, 'Pedrito'));
+  }, 2000);
+ }
+}

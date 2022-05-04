@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { login } from '../../actions/auth';
+import { startLoginEmailPassword } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
 
 export const LoginScreen = () => {
@@ -17,7 +17,7 @@ export const LoginScreen = () => {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-		dispatch(login(12345, 'Antonio'));
+		dispatch(startLoginEmailPassword(email, password));
 
 	}
 
@@ -35,6 +35,7 @@ export const LoginScreen = () => {
 					onChange={handleInputChange}
 				/>
 				<input
+					autoComplete='off'
 					className='auth__input'
 					name='password'
 					placeholder='Password'
