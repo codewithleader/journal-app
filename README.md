@@ -23,3 +23,5 @@
  - Created a new proyect in the Firebase Console.
  - The registration options by email and Google were enabled.
  - Installed Firebase v8.10.0 using npm command.
+- Configure Firebase and Google Sign-in.
+- User registration form.
