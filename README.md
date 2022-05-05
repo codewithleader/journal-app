@@ -31,3 +31,12 @@
  - Implementing the "validator" library to validate the form fields.
   - validator.isEmail returns boolean.
    - the !validator.isEmail is used with the exclamation mark.
+- uiReducer and Actions.
+ - Step 1: Create a Reducer "uiReducer.js"
+ - Step 2: ui.js
+ - dispatch
+
+ ## Commit
+ - Type: Feat, Fix, Refactor, Test.
+ - Scope.
+ - Subject.
