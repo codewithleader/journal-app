@@ -1,32 +1,8 @@
-// Aquí van todas las actions
-// Nota: Snippet para una export const: enf
+// Here all actions
+// Note: Snippet for export const: enf
 
 import { firebase, googleAuthProvider } from '../firebase/firebase-config';
 import { types } from '../types/types';
-
-// action login with Google
-export const startGoogleLogin = () => {
-	return (dispatch) => {
-		firebase
-			.auth()
-			.signInWithPopup(googleAuthProvider)
-			// .then( userCredential => {
-				// console.log(userCredential);
-			.then(({ user }) => {
-				dispatch(
-						login(user.uid, user.displayName)
-					)
-				console.log(user.uid);
-				console.log(user.displayName);
-				console.log(user.email);
-				console.log(user.photoURL);
-				// user.uid
-				// user.displayName
-				// user.email
-				// user.photoURL
-			});
-	};
-};
 
 // action login:
 export const login = (uid, displayName) => ({
@@ -41,7 +17,43 @@ export const login = (uid, displayName) => ({
 export const startLoginEmailPassword = (email, password) => {
 	return (dispatch) => {
 		setTimeout(() => {
-			dispatch(login(123, 'Pedrito'));
+			dispatch(login(123, 'Peter Parker'));
 		}, 2000);
+	};
+};
+
+// action with Email and Password
+export const startRegisterWithEmailPasswordName = (email, password, name) => {
+	return (dispatch) => {
+		firebase
+			.auth()
+			.createUserWithEmailAndPassword(email, password)
+			.then(async ({ user }) => {
+				await user.updateProfile({ displayName: name });
+				dispatch(login(user.uid, user.displayName));
+			})
+			.catch((e) => console.log(e));
+	};
+};
+
+// action login with Google
+export const startGoogleLogin = () => {
+	return (dispatch) => {
+		firebase
+			.auth()
+			.signInWithPopup(googleAuthProvider)
+			// .then( userCredential => {
+			// console.log(userCredential);
+			.then(({ user }) => {
+				dispatch(login(user.uid, user.displayName));
+				// console.log(user.uid);
+				// console.log(user.displayName);
+				// console.log(user.email);
+				// console.log(user.photoURL);
+				// // user.uid
+				// user.displayName
+				// user.email
+				// user.photoURL
+			});
 	};
 };

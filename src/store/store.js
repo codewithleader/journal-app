@@ -9,8 +9,7 @@ const composeEnhancers =
 	compose;
 
 /* Combining the reducers.
-podemos tambien crear un archivo aparte
-llamado rooReducers.js e importarlo
+We can also create a separate file called rootReducers.js and import it
 */
 const reducers = combineReducers({
 	auth: authReducer,

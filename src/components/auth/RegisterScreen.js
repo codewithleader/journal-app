@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import validator from 'validator';
+
 import { useForm } from '../../hooks/useForm';
-import validator from 'validator'
-import { useDispatch } from 'react-redux';
 import { removeError, setError } from '../../actions/ui';
+import { startRegisterWithEmailPasswordName } from '../../actions/auth';
 
 export const RegisterScreen = () => {
-
 	const dispatch = useDispatch();
+	const { msgError } = useSelector((state) => state.ui);
 
 	const [formValues, handleInputChange] = useForm({
 		name: 'Elis Antonio',
@@ -21,9 +23,9 @@ export const RegisterScreen = () => {
 	const handleRegister = (e) => {
 		e.preventDefault();
 		if (isFormValid()) {
-			console.log('formulario correcto');
+			dispatch(startRegisterWithEmailPasswordName(email, password, name));
 		}
-	}
+	};
 
 	const isFormValid = () => {
 		if (name.trim().length === 0) {
@@ -33,69 +35,69 @@ export const RegisterScreen = () => {
 			dispatch(setError('Email is not valid'));
 			return false;
 		} else if (password !== password2 || password.length < 5) {
-			dispatch(setError('Password should be at least 6 characters and match each other'))
+			dispatch(
+				setError(
+					'Password should be at least 6 characters and match each other'
+				)
+			);
 			return false;
 		}
 
 		dispatch(removeError());
-		
+
 		return true;
-	}// cierre isFormValid
+	}; // closing isFormValid
 
 	return (
 		<>
 			<h3 className='auth__title'>Register</h3>
-			<form onSubmit={ handleRegister }>
-				
-				<div className="auth__alert-error">
-					hola mundo
-				</div>
+			<form onSubmit={handleRegister}>
+				{msgError && <div className='auth__alert-error'>{msgError}</div>}
 
 				<input
 					autoComplete='off'
 					className='auth__input'
 					name='name'
+					onChange={handleInputChange}
 					placeholder='Name'
 					type='text'
-					value={ name }
-					onChange={ handleInputChange }
+					value={name}
 				/>
 				<input
 					autoComplete='off'
 					className='auth__input'
 					name='email'
+					onChange={handleInputChange}
 					placeholder='Email'
 					type='text'
-					value={ email }
-					onChange={ handleInputChange }
+					value={email}
 				/>
 				<input
 					autoComplete='off'
 					className='auth__input'
 					name='password'
+					onChange={handleInputChange}
 					placeholder='Password'
 					type='password'
-					value={ password }
-					onChange={ handleInputChange }
+					value={password}
 				/>
 				<input
 					autoComplete='off'
 					className='auth__input'
 					name='password2'
+					onChange={handleInputChange}
 					placeholder='Confirm password'
 					type='password'
-					value={ password2 }
-					onChange={ handleInputChange }
+					value={password2}
 				/>
 				<button className='btn btn-primary btn-block mb-5' type='submit'>
 					Register
 				</button>
 
-				
 				<Link className='link' to='/auth/login'>
 					Already registered?
 				</Link>
 			</form>
 		</>
 	);
-}
+};
