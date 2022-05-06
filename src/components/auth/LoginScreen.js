@@ -10,7 +10,7 @@ export const LoginScreen = () => {
 
 	const [formValues, handleInputChange] = useForm({
 		email: 'elis@mail.com',
-		password: '1234'
+		password: '123456'
 	});
 
 	const { email, password } = formValues;
@@ -20,7 +20,7 @@ export const LoginScreen = () => {
 		dispatch(startLoginEmailPassword(email, password));
 
 	}
-	// snippet para funciones como la de abajo: nf ó nfn
+	// shortcut for functions such as the below: nf ó nfn
 	const handleGoogleLogin = () => {
 		dispatch(startGoogleLogin());
 	}

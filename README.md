@@ -45,6 +45,7 @@
 
 ### Login
 - Perform user login with Email and Password.
+ - Firebase signInWithEmailAndPassword
 
 
 
