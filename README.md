@@ -48,10 +48,10 @@
  - Firebase signInWithEmailAndPassword
 
 ### Loading state
-- when clicking the login button, it is disabled while waiting for the response form the server.
+- when clicking the login button, it is disabled while waiting for the response from the server.
+- Keep authentication state on reload.
 
-
-## Commit
+#### Commit
 
 - Type: Feat, Fix, Refactor, Test.
 - Scope.

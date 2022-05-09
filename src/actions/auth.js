@@ -45,8 +45,7 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
 			.catch((e) => console.log(e));
 	};
 };
-
-
+ 
 // action login with Google
 export const startGoogleLogin = () => {
 	return (dispatch) => {
