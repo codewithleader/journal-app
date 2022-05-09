@@ -14,6 +14,21 @@ export const login = (uid, displayName) => ({
 	},
 });
 
+
+
+// Logout action:
+export const startLogout = () => {
+	return async (dispatch) => {
+		await firebase.auth().signOut();
+		dispatch(logout());
+	};
+};
+export const logout = () => ({
+	type: types.logout,
+});
+
+
+
 // action login with email and password type async example:
 export const startLoginEmailPassword = (email, password) => {
 	return (dispatch) => {
@@ -45,7 +60,7 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
 			.catch((e) => console.log(e));
 	};
 };
- 
+
 // action login with Google
 export const startGoogleLogin = () => {
 	return (dispatch) => {

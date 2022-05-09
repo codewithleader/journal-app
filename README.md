@@ -52,6 +52,9 @@
 - Keep authentication state on reload.
 - Show a global loading in the application.
 
+### Logout
+- Logout of Firebase.
+
 #### Commit
 
 - Type: Feat, Fix, Refactor, Test.
