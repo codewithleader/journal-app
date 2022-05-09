@@ -50,6 +50,7 @@
 ### Loading state
 - when clicking the login button, it is disabled while waiting for the response from the server.
 - Keep authentication state on reload.
+- Show a global loading in the application.
 
 #### Commit
 
