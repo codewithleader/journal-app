@@ -3,6 +3,7 @@
 
 import { firebase, googleAuthProvider } from '../firebase/firebase-config';
 import { types } from '../types/types';
+import { finishLoading, startLoading } from './ui';
 
 // action login:
 export const login = (uid, displayName) => ({
@@ -16,13 +17,18 @@ export const login = (uid, displayName) => ({
 // action login with email and password type async example:
 export const startLoginEmailPassword = (email, password) => {
 	return (dispatch) => {
+		dispatch(startLoading());
 		firebase
 			.auth()
 			.signInWithEmailAndPassword(email, password)
 			.then(({ user }) => {
 				dispatch(login(user.uid, user.displayName));
+				dispatch(finishLoading());
 			}) // then
-			.catch((e) => console.log(e));
+			.catch((e) => {
+				console.log(e);
+				dispatch(finishLoading());
+			});
 	};
 };
 
@@ -39,6 +45,7 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
 			.catch((e) => console.log(e));
 	};
 };
+
 
 // action login with Google
 export const startGoogleLogin = () => {

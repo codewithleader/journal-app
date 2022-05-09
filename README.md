@@ -47,6 +47,8 @@
 - Perform user login with Email and Password.
  - Firebase signInWithEmailAndPassword
 
+### Loading state
+- when clicking the login button, it is disabled while waiting for the response form the server.
 
 
 ## Commit
