@@ -1,3 +1,4 @@
+// Reducer for authentication state.
 import { types } from "../types/types";
 
 

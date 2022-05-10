@@ -1,3 +1,4 @@
+// Reducer for user interface.
 import { types } from '../types/types';
 
 const initialState = {
