@@ -61,6 +61,15 @@
 ### Error message.
 - SweetAlert2 was installed for error messages.
 
+### Name on Sidebar.js
+- useSelector state.auth.name
+
+### NotesReducer
+- The new reducer "notesReducer.js" was created.
+- Charged the JournalScreen component.
+- Fetched the state of the "active" property from the Store with the useSelector.
+
+
 #### Commit
 
 - Type: Feat, Fix, Refactor, Test.
