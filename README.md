@@ -64,11 +64,14 @@
 ### Name on Sidebar.js
 - useSelector state.auth.name
 
-### NotesReducer
+### NotesReducer.
 - The new reducer "notesReducer.js" was created.
 - Charged the JournalScreen component.
 - Fetched the state of the "active" property from the Store with the useSelector.
 
+### Create a new Note.
+_ New types for notes were created.
+- Created "notes" action and saved collection to Firestore with db.
 
 #### Commit
 
