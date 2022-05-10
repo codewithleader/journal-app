@@ -55,8 +55,11 @@
 ### Logout
 - Logout of Firebase.
 
-### Private routes.
+### Private and Public routes.
 - Route protection.
+
+### Error message.
+- SweetAlert2 was installed for error messages.
 
 #### Commit
 

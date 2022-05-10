@@ -1,6 +1,8 @@
 // Here all actions
 // Note: Snippet for export const: enf
 
+import Swal from 'sweetalert2';
+
 import { firebase, googleAuthProvider } from '../firebase/firebase-config';
 import { types } from '../types/types';
 import { finishLoading, startLoading } from './ui';
@@ -14,8 +16,6 @@ export const login = (uid, displayName) => ({
 	},
 });
 
-
-
 // Logout action:
 export const startLogout = () => {
 	return async (dispatch) => {
@@ -26,8 +26,6 @@ export const startLogout = () => {
 export const logout = () => ({
 	type: types.logout,
 });
-
-
 
 // action login with email and password type async example:
 export const startLoginEmailPassword = (email, password) => {
@@ -41,8 +39,9 @@ export const startLoginEmailPassword = (email, password) => {
 				dispatch(finishLoading());
 			}) // then
 			.catch((e) => {
-				console.log(e);
+				// console.log(e);
 				dispatch(finishLoading());
+				Swal.fire('Error', e.message, 'error');
 			});
 	};
 };
@@ -57,7 +56,10 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
 				await user.updateProfile({ displayName: name });
 				dispatch(login(user.uid, user.displayName));
 			})
-			.catch((e) => console.log(e));
+			.catch((e) => {
+				// console.log(e);
+				Swal.fire('Error', e.message, 'error');
+			});
 	};
 };
 
