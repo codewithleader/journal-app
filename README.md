@@ -55,6 +55,9 @@
 ### Logout
 - Logout of Firebase.
 
+### Private routes.
+- Route protection.
+
 #### Commit
 
 - Type: Feat, Fix, Refactor, Test.
