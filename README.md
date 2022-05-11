@@ -82,6 +82,12 @@
  - Activate a note for editing.
  - Change the active note by changing the selection.
 
+ ### Update Notes to Firestore.
+ - Created new action startSaveNote.
+
+ ### Refresh sidebar with update note.
+ - SweetAlert2 was used to inform the user that their note has been updated.
+
 #### Commit
 
 - Type: Feat, Fix, Refactor, Test.
