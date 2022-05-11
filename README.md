@@ -70,8 +70,13 @@
 - Fetched the state of the "active" property from the Store with the useSelector.
 
 ### Create a new Note.
-_ New types for notes were created.
+- New types for notes were created.
 - Created "notes" action and saved collection to Firestore with db.
+
+### Show notes
+- The notes in the JournalEntry component were displayed.
+- "dayjs" was used to format the date.
+ - Also used "AdvancedFormat" plugin for "Do" format.
 
 #### Commit
 
