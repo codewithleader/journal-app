@@ -78,6 +78,10 @@
 - "dayjs" was used to format the date.
  - Also used "AdvancedFormat" plugin for "Do" format.
 
+ ### Edit notes.
+ - Activate a note for editing.
+ - Change the active note by changing the selection.
+
 #### Commit
 
 - Type: Feat, Fix, Refactor, Test.
