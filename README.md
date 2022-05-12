@@ -88,6 +88,23 @@
  ### Refresh sidebar with update note.
  - SweetAlert2 was used to inform the user that their note has been updated.
 
+### Cloudinary
+- Cloudinary account was created
+- An upload preset was added.
+
+### Postman Data for Cloudinary:
+- https://api.cloudinary.com/v1_1/:cloud_name/:action
+- cloud_name: "drqbe1vok"
+- action: "upload"
+- file, type: file
+- upload_preset: "react-journal"
+
+### Ending.
+- We remove the note.
+- We add animations.
+- We clean the notes on logout.
+
+
 #### Commit
 
 - Type: Feat, Fix, Refactor, Test.

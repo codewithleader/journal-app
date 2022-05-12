@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 import { firebase, googleAuthProvider } from '../firebase/firebase-config';
 import { types } from '../types/types';
+import { noteLogout } from './notes';
 import { finishLoading, startLoading } from './ui';
 
 // action login:
@@ -14,17 +15,6 @@ export const login = (uid, displayName) => ({
 		uid,
 		displayName,
 	},
-});
-
-// Logout action:
-export const startLogout = () => {
-	return async (dispatch) => {
-		await firebase.auth().signOut();
-		dispatch(logout());
-	};
-};
-export const logout = () => ({
-	type: types.logout,
 });
 
 // action login with email and password type async example:
@@ -84,3 +74,15 @@ export const startGoogleLogin = () => {
 			});
 	};
 };
+
+// Logout action:
+export const startLogout = () => {
+	return async (dispatch) => {
+		await firebase.auth().signOut();
+		dispatch(logout());
+		dispatch(noteLogout());
+	};
+};
+export const logout = () => ({
+	type: types.logout,
+});
