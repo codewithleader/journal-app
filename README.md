@@ -104,6 +104,8 @@
 - We add animations.
 - We clean the notes on logout.
 
+### Testing
+- Testing in reducers.
 
 #### Commit
 
