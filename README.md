@@ -107,6 +107,9 @@
 ### Testing
 - Testing in reducers.
 
+### .ENV
+- Create environment variables for firebase configurations.
+
 #### Commit
 
 - Type: Feat, Fix, Refactor, Test.
