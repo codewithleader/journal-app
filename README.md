@@ -109,6 +109,7 @@
 - Testing in actions.
  - Testing in notes.test.js
  - Add try/catch in notes.js
+ - Testing in auth.test.js
 
 ### .ENV
 - Create environment variables for firebase configurations.
