@@ -58,13 +58,13 @@ describe('Testing with the auth actions', () => {
 	}); // test 2
 
 	test('should start the startLoginEmailPassword', async () => {
-		await store.dispatch(startLoginEmailPassword('test@testing.com', '123456'));
+		await store.dispatch(startLoginEmailPassword(process.env.REACT_APP_EMAIL_TEST, process.env.REACT_APP_PASSWORD));
 		const actions = store.getActions();
 		// console.log(actions);
 		expect(actions[1]).toEqual({
 			type: types.login,
 			payload: {
-				uid: 'DVM4Cb2tPnThtXAPfyBcC6xwhFi2',
+				uid: process.env.REACT_APP_UID_EMAIL_TEST,
 				displayName: null,
 			},
 		});
