@@ -4,9 +4,18 @@ import {
 	startLoadingNotes,
 	startNewNote,
 	startSaveNote,
+	startUploading,
 } from '../../actions/notes';
 import { types } from '../../types/types';
 import { db } from '../../firebase/firebase-config';
+import { fileUpload } from '../../helpers/fileUpload';
+
+jest.mock('../../helpers/fileUpload', () => ({
+	fileUpload: jest.fn(() => {
+		return 'https://hello-world.com/picture.jpg';
+		// return Promise.resolve('https://hello-world.com/picture.jpg');
+	})
+}));
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -15,6 +24,13 @@ const initState = {
 	auth: {
 		uid: 'TESTING',
 	},
+	notes: {
+		active: {
+			body: 'Body updated from testing',
+			id: 'aA22S6L37jN68qIAaLE8',
+			title: 'Testing in startSaveNote',
+		}
+	}
 };
 let store = mockStore(initState);
 
@@ -96,4 +112,16 @@ describe('Testing with notes actions', () => {
 		// expect(actions[0].payload.note.body).toBe('Body updated from testing');
 		// expect(actions[0].payload.note.id).toBe('aA22S6L37jN68qIAaLE8');
 	}); // test 3
+
+	test('should update the url of entry', async() => {
+		const file = new File([], 'photo.jpg');
+		await store.dispatch(startUploading(file));
+
+		const docRef = await db.doc(`/TESTING/journal/notes/${initState.notes.active.id}`).get();
+		expect(docRef.data().url).toBe('https://hello-world.com/picture.jpg');
+		
+		// const docRef = await db.doc(`/TESTING/journal/notes/${initState.notes.active.id}`).get();
+		// expect(docRef.data().url).toBe(initState.notes.active.url);
+
+	}); // test 4
 }); // describe

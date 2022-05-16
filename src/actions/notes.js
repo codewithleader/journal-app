@@ -1,7 +1,4 @@
 // Notes action
-
-// TODO: Falta refrescar la lista de notas en el sidebar cuando se crea una nueva nota.
-
 import Swal from 'sweetalert2';
 import { db } from '../firebase/firebase-config';
 import { fileUpload } from '../helpers/fileUpload';
@@ -17,11 +14,17 @@ export const startNewNote = () => {
 			date: new Date().getTime(),
 		};
 
-		// docRef:
-		const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
+		try {
+			// docRef:
+			const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
+	
+			dispatch(activeNote(doc.id, newNote));
+			dispatch(addNewNote(doc.id, newNote));
+			
+		} catch (error) {
+			console.log(error);
+		}
 
-		dispatch(activeNote(doc.id, newNote));
-		dispatch(addNewNote(doc.id, newNote));
 	};
 };
 
