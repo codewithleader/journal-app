@@ -49,7 +49,7 @@ export const NoteScreen = () => {
 					cols='12'
 					rows='10'
 				></textarea>
-				{/* <div className='notes__image'> NO FUNCIONA ASI. TUVE QUE COLOCAR LA CLASE EN LA TAG IMG PERO DENTRO DE UN DIV SIN CLASES */}
+				{/* <div className='notes__image'> it does not work like that. I had to place the class in the img tag but within a div without classes */}
 				{note.url && (
 					<div>
 						<img className='notes__image' src={note.url} alt='landscape' />

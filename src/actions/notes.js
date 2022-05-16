@@ -98,7 +98,7 @@ export const startUploading = (file) => {
 	};
 };
 
-// para eliminar la nota del Firestore
+// to delete the note from Firestore
 export const startDeleting = (id) => {
 	return async (dispatch, getState) => {
 		const uid = getState().auth.uid;
@@ -107,7 +107,7 @@ export const startDeleting = (id) => {
 	};
 };
 
-// para eliminar la nota del navegador (memoria)
+// to delete the note from navigator (memory)
 export const deleteNote = (id) => ({
 	type: types.notesDelete,
 	payload: id,

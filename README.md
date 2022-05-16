@@ -95,9 +95,9 @@
 ### Postman Data for Cloudinary:
 - https://api.cloudinary.com/v1_1/:cloud_name/:action
 - cloud_name: "personal-cloudName"
-- action: "upload"
+- action: "upload" OR "delete"
 - file, type: file
-- upload_preset: "react-journal"
+- upload_preset: "personal-upload_preset"
 
 ### Ending.
 - We remove the note.
