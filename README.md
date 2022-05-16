@@ -106,6 +106,8 @@
 
 ### Testing
 - Testing in reducers.
+- Testing in actions.
+ - Testing in notes.test.js
 
 ### .ENV
 - Create environment variables for firebase configurations.
