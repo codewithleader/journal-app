@@ -94,7 +94,7 @@
 
 ### Postman Data for Cloudinary:
 - https://api.cloudinary.com/v1_1/:cloud_name/:action
-- cloud_name: "drqbe1vok"
+- cloud_name: "personal-cloudName"
 - action: "upload"
 - file, type: file
 - upload_preset: "react-journal"
