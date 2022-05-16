@@ -4,3 +4,7 @@ import { createSerializer } from 'enzyme-to-json';
 
 Enzyme.configure({ adapter: new Adapter() });
 expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
+ 
+// configure error windows.scrollTo:
+const noScroll = () => { };
+Object.defineProperty(window, 'scrollTo', { value: noScroll, writable: true });
