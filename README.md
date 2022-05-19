@@ -110,6 +110,8 @@
  - Testing in notes.test.js
  - Add try/catch in notes.js
  - Testing in auth.test.js
+ - Testing in Sidebar, JournalEntry, AppRouter...
+ - End Test.
 
 ### .ENV
 - Create environment variables for firebase configurations.
